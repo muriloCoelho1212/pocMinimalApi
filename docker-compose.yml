@@ -9,8 +9,8 @@ services:
       - "8080:8080"
       - "8081:8081"
     depends_on:
-      - postgres_db
-  postgres_db:
+      - database
+  database:
     image: postgres:latest
     container_name: screensound-db
     environment:
@@ -18,9 +18,9 @@ services:
       - POSTGRES_PASSWORD=12345678
       - POSTGRES_DB=screensound
     ports:
-      - '5433:5433'
+      - "15432:5432"
     volumes:
-      - postgres_db:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
 volumes:
-  postgres_db:
+  db_data:
     driver: local
