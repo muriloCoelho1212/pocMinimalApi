@@ -1,35 +1,39 @@
 ﻿@WebApplication1_HostAddress = https://localhost:44337
 
-POST {{WebApplication1_HostAddress}}/todoitems
+
+GET {{WebApplication1_HostAddress}}/todos
+
+###
+
+POST {{WebApplication1_HostAddress}}/todos
 Content-Type: application/json
 
 
 {
-  "name":"testandodnv",
+  "name":"alou",
   "isComplete":true
 }
 
 ###
 
-GET {{WebApplication1_HostAddress}}/todoitems
+GET {{WebApplication1_HostAddress}}/todos/4
 
 ###
 
-GET {{WebApplication1_HostAddress}}/todoitems/5
-
-###
-
-
-PUT {{WebApplication1_HostAddress}}/todoitems/5
+PUT {{WebApplication1_HostAddress}}/todos/4
 Content-Type: application/json
 
 {
   "name": "feed hahahahaha",
-  "isComplete": false
+  "isComplete": true
 }
 
 ###
 
-DELETE {{WebApplication1_HostAddress}}/todoitems/2
+DELETE {{WebApplication1_HostAddress}}/todos/6
+
+###
+
+GET {{WebApplication1_HostAddress}}/todos/complete
 
 ###
